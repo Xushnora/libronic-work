@@ -1,0 +1,84 @@
+.langpage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('../imgs/onePage.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+    &__volume {
+        position: fixed;
+        right: 30px;
+        top: 30px;
+        cursor: pointer;
+
+        .bx {
+            color: #fff;
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+
+        &:hover .bx{
+            color: goldenrod;
+            transform: scale(1.3);
+        }
+    }
+
+    &__titleBox {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+
+    &__title {
+        font-family: 'Anton', sans-serif;
+        color: #fff;
+        width: 432px;
+        height: 120px;
+        font-size: 70.3688px;
+        line-height: 75px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+
+        &:hover {
+            color: goldenrod;
+        }
+    }
+
+    &__btnsBox {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btn {
+        width: 262px;
+        height: 77.94px;
+        left: 765px;
+        top: 249px;
+        background: #FFFFFF;
+        border-radius: 19.8987px;
+        border: none;
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 29.8481px;
+        line-height: 45px;
+        text-align: center;
+        color: #000000;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: goldenrod;
+            transform: scale(1.2);
+        }
+    }
+}
