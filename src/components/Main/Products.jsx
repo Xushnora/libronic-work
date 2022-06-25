@@ -24,10 +24,12 @@ function Products(){
                                     <span className="products__span animate__animated animate__bounceInLeft animate__delay-2s">{t('art')}</span>
                                     <h3 className="products__title animate__animated animate__bounceInRight animate__delay-2s">{item.title}</h3>
                                     <p className="products__text animate__animated animate__bounceInLeft animate__delay-2s">{item.desc}</p>
-                                    <button className="products__button">
-                                        <p>{t('Explore more')}</p>
-                                        <i class='bx bx-chevrons-right'></i>
-                                    </button>
+                                    <Link to= '/description'>
+                                        <button className="products__button">
+                                            <p>{t('Explore more')}</p>
+                                            <i class='bx bx-chevrons-right'></i>
+                                        </button>
+                                    </Link>
                                 </div>
                             </li>
                         )

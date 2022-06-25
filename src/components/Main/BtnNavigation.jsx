@@ -4,15 +4,19 @@ function BtnNavigation(){
     return(
             <div>
                 <div className="products__btnGroup">
-                    {/* <Link to='/'> */}
-                        <button className="products__btns">A</button>
-                    {/* </Link> */}
-                    <Link to='/production'>
-                        <button className="products__btns"><i class='bx bx-briefcase-alt-2'></i></button>
+                    <Link to='/'>
+                        <button className="products__btns">Aa</button>
                     </Link>
-                    <button className="products__btns"><i class='bx bx-group'></i></button>
+                    <Link to='/production'>
+                        <button className="products__btns"><i className='bx bx-briefcase-alt-2'></i></button>
+                    </Link>
+                    <Link to= '/about'>
+                        <button className="products__btns"><i className='bx bx-group'></i></button>
+                    </Link>
                     <button className="products__btns">?</button>
-                    <button className="products__btns"><i class='bx bx-phone-call'></i></button>
+                    <Link to='/about'>
+                        <button className="products__btns"><i className='bx bx-phone-call'></i></button>
+                    </Link>
                 </div>
             </div>
     )

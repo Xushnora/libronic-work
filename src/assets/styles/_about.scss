@@ -1,0 +1,84 @@
+.missionUs {
+    width: 100%;
+    padding-bottom: 90px;
+    background-color: #000;
+    position: relative;
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+
+    &__left {
+        cursor: pointer;
+    
+        .bx {
+            color: #fff;
+            font-size: 40px;
+        }
+    }
+
+    &__volume {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    
+        .bx {
+            color: #fff;
+            font-size: 30px;
+        }
+    }
+
+    &__btnCont {
+        margin-bottom: 100px;
+    }
+
+}
+
+.about {
+    background-color: #0D0700;
+    width: 100%;
+
+    &__infoBox {
+        background-color: #0D0700;
+        padding-top: 25px;
+        padding-bottom: 200px;
+    }
+
+    &__list {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    &__itemImg {
+        width: 165px;
+        height: 165px;
+        margin-bottom: 20px;
+    }
+
+    &__itemText {
+        font-family: 'Fira Sans';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        color: #FFFFFF;
+        margin-left: 15px;
+    }
+}
+
+

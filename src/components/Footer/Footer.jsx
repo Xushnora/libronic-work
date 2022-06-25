@@ -12,19 +12,19 @@ function Footer(){
                     </div>
                     <div className="footer__mediaBox">
                         <button className="footer__mediaBtn">
-                            <i class='bx bxl-instagram'></i>
+                            <i className='bx bxl-instagram'></i>
                         </button>
                         <button className="footer__mediaBtn">
-                            <i class='bx bxl-facebook-circle'></i>
+                            <i className='bx bxl-facebook-circle'></i>
                         </button>
                         <button className="footer__mediaBtn">
-                            <i class='bx bxl-twitter'></i>
+                            <i className='bx bxl-twitter'></i>
                         </button>
                         <button className="footer__mediaBtn">
-                            <i class='bx bxl-github'></i>
+                            <i className='bx bxl-github'></i>
                         </button>
                         <button className="footer__mediaBtn">
-                            <i class='bx bxl-linkedin-square'></i>
+                            <i className='bx bxl-linkedin-square'></i>
                         </button>
                     </div>
                 </div>

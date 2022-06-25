@@ -1,18 +1,48 @@
 .mission {
+    padding-top: 200px;
+    padding-bottom: 80px;
+    background-color: #000;
+    position: relative;
 
     &__title {
-
+        font-family: 'Anton';
+        font-size: 70.3688px;
+        line-height: 80px;
+        color: #fff;
+        margin-bottom: 30px;
+        width: 400px;
+        text-transform: uppercase;
     }
 
     &__text {
+        font-family: 'Fira Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 100%;
+        color: #fff;
+        margin-bottom: 20px;
+        width: 565px;
 
     }
 
     &__btnGroup {
-
+        display: flex;
+        align-items: center;
+        gap: 100px;
     }
 
     &__btn {
+        padding: 10px 40px;
+        border: 1px solid transparent;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        color: #000000;
+        outline: none;
         
     }
 }

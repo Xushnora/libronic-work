@@ -3,6 +3,11 @@
 @import "footer";
 @import "production";
 @import "mission";
+@import "about";
+@import "contact";
+@import "videos";
+@import "slide";
+@import "modal";
 
 // FONTS >>>>>>>>>>>>>>>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&display=swap');
@@ -12,6 +17,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #000;
 }
 
 .container {
