@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import {Link} from 'react-router-dom'
 
 function LangPage({changeLanguage}){
-    const {t, i18n} = useTranslation()
+    const {t, i18next} = useTranslation()
 
     return(
         <div className="langpage">

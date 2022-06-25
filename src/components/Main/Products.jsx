@@ -13,7 +13,7 @@ function Products(){
         <>
             <div className="products">
                 <div className="products__nameBox">
-                    <h2 className="products__name animate__animated animate__bounceInDown animate__delay-2s">{t('products')}</h2>
+                    <h2 className="products__name animate__animated animate__bounceInDown animate__delay-2s">{t('title')}</h2>
                 </div>
                 <ul className="products__list">
                     {obj.map((item) => {
