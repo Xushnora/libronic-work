@@ -21,8 +21,7 @@ function Vedios(){
                 <button onClick={handlerRightBtn} className="slider__rightBtn" style={{display: `${(count !== videoObj.length - 2) ? "block" : "none" }`}}>
                     <i className='bx bx-chevron-right'></i>
                 </button>
-                <button onClick={handlerLeftBtn} className="slider__leftBtn" >
-                    {/*  style={{display: `${(count === 0) ? "none" : "block" }`}} */}
+                <button onClick={handlerLeftBtn} className="slider__leftBtn"  style={{display: `${(count === -1) ? "none" : "block" }`}}>
                     <i className='bx bx-chevron-left'></i>
                 </button>
                 <ul className="vedios__list" style={{transform: `translateX(${-count * 800}px)`}}>

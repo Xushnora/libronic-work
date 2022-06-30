@@ -3,6 +3,8 @@
     padding-bottom: 90px;
     background-color: #000;
     position: relative;
+    width: 100%;
+    overflow: hidden;
 
     &__btns {
         display: flex;
@@ -35,6 +37,33 @@
 
     &__btnCont {
         margin-bottom: 100px;
+    }
+
+    &__searchBtn {
+        .bx {
+            color: #fff;
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+
+        &:hover .bx{
+            color: goldenrod;
+            transform: scale(1.3);
+        }
+    }
+
+    &__volumeBtn {
+
+        .bx {
+            color: #fff;
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+
+        &:hover .bx{
+            color: goldenrod;
+            transform: scale(1.3);
+        }
     }
 
 }
@@ -78,6 +107,51 @@
         line-height: 100%;
         color: #FFFFFF;
         margin-left: 15px;
+    }
+}
+
+.settingImg {
+    animation: settings 8s linear infinite;
+}
+
+@keyframes settings {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.locationImg {
+    animation: location 1.2s ease-in infinite;
+}
+
+@keyframes location {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-17px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.leftBtn {
+    animation: leftBtn 2s ease infinite;
+}
+
+@keyframes leftBtn {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-15px);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
 

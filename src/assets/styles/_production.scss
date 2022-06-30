@@ -1,6 +1,6 @@
 .production {
     width: 100%;
-    height: 100vh;
+    height: 100vh !important;
     background-image: url("https://imgur.com/nP80jVU.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -60,13 +60,26 @@
         opacity: 0.5;
         text-transform: uppercase;
         transition: all 0.1s ease;
+        margin-right: 20px;
 
         &:hover {
             opacity: 1;
         }
+
+        &:focus {
+            opacity: 1;
+        }
+    }
+
+    &__btnBox {
+        margin-bottom: 10px;
     }
 }
 
 .activeBtn {
     color: #fff;
+}
+
+.category {
+    width: 100%;
 }

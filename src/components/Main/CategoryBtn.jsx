@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function CategoryBtn({setFilteredArr, obj}){
+function CategoryBtn({ setFilteredArr, productsArr }){
 
-    const btn = [ "All", "category1", "category2", "category3", "category4"]
-    const typeArr = ["", 'category1', 'category2', 'category3', 'category4']
+    const btn = [ "Barchasi", "darvozalar", "eshiklar", "panjara", "to'siqlar"]
+    const typeArr = ["", '1', '2', '3', "4"]
 
     const handlerClick = (e) => {
             let btnValue = e.target.textContent;
 
-            if(btnValue === "All") {
-                setFilteredArr(obj);
+            if(btnValue === "Barchasi") {
+                setFilteredArr(productsArr);
             } else {
-                const newfilteredArr = obj.filter((item) => {
-                    return item.category === e.target.id
+                const newfilteredArr = productsArr.filter((item) => {
+                    return item.category === +e.target.id
                 })
                 setFilteredArr(newfilteredArr);
             }

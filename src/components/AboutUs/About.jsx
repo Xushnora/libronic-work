@@ -4,11 +4,11 @@ import MissonUs from "./MissonUs";
 import Footer from '../Footer/Footer'
 import Vedios from "./Videos";
 
-function AboutUs(){
+function AboutUs({isPlaying, setIsPlaying, currentSong}){
 
     return(
         <div className="about">
-            <MissonUs />
+            <MissonUs isPlaying={isPlaying}  setIsPlaying = {setIsPlaying} currentSong = {currentSong}/>
             <div className="container">
                 <div className="about__infoBox">
                     <ul className="about__list">
@@ -17,7 +17,7 @@ function AboutUs(){
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                         <li className="about__item">
-                            <img className="about__itemImg" src="https://imgur.com/kHmOYrY.png" alt="setting" />
+                            <img className="about__itemImg settingImg" src="https://imgur.com/kHmOYrY.png" alt="setting" />
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                         <li className="about__item">
@@ -25,7 +25,7 @@ function AboutUs(){
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                         <li className="about__item">
-                            <img className="about__itemImg" src="https://imgur.com/tyOQbW0.png" alt="location" />
+                            <img className="about__itemImg locationImg" src="https://imgur.com/tyOQbW0.png" alt="location" />
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                     </ul>

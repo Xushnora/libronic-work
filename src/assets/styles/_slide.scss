@@ -10,8 +10,11 @@
 
     &__acsess {
         position: absolute;
-        top: 5%;
-        left: 15%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.356);
     }
 
     &__acsessBox {
@@ -39,4 +42,12 @@
     &__btnCont {
         margin-right: 100px;
     }
+}
+
+.slide-left {
+    margin-left: 30px;
+}
+
+.slide-volume {
+    margin-right: 110px;
 }

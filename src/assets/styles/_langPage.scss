@@ -10,11 +10,12 @@
         background-size: cover;
         background-color: #000;
 
-    &__volu000{
+    &__volume{
         position: fixed;
-        right: 30px;
-        top: 30px;
+        right: 35px;
+        top: 35px;
         cursor: pointer;
+        z-index: 100000;
 
         .bx {
             color: #fff;
@@ -79,7 +80,7 @@
 
         &:hover {
             color: goldenrod;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
     }
 }

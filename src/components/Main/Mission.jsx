@@ -9,11 +9,15 @@ function Mission(){
                 <p className="mission__text animate__animated animate__bounceInLeft animate__delay-2s">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum!</p>
                 <div className="mission__btnGroup">
                     <Link to = '/about'>
-                        <button className="mission__btn animate__animated animate__tada animate__delay-2s">Contact</button>
+                        <button className="mission__btn button animate__animated animate__tada animate__delay-2s">Contact</button>
                     </Link>
                     <Link to = '/about'>
-                        <button className="mission__btn animate__animated animate__tada animate__delay-2s">Explore more</button>
+                        <button className="mission__btn button animate__animated animate__tada animate__delay-2s">Explore more</button>
                     </Link>
+                    {/* <div>
+                        <span class="button">Contact</span>
+                        <span class="button">Explore more</span>
+                    </div> */}
                 </div>
             </div>
         </div>

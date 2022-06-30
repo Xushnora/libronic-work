@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin colorChange($color, $num) {
+  @if $num == 1 {
+    animation: colorize .5s ease-in-out forwards;
+    
+    @keyframes colorize {
+      0% {
+        color: $color;
+      }
+      25% {
+        color: $color;
+      }
+      100% {
+        color: white;
+      }
+    }
+  }
+  
+  @elseif $num == 2 {
+    animation: colorChange .5s ease-in-out forwards;
+    
+    @keyframes colorChange {
+      0% {
+        color: $color;
+      }
+      25% {
+        color: $color;
+      }
+      100% {
+        color: white;
+      }
+    }
+  }
+}
+.day-light {
+  position: absolute;
+  -webkit-appearance: none;
+}
+.day-light:checked ~ .buttons {
+  background-color: #212121;
+}
+.day-light:checked + .mode {
+  color: #F3F3F3;
+}
+.day-light:checked + .mode .change {
+  background-color: #F3F3F3;
+}
+.mode {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  top: 40px;
+  right: 60px;
+  gap: 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #212121;
+}
+.change {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border-radius: 50%;
+}
+.change:after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid goldenrod;
+  border-radius: 50%;
+}
+
+.button {
+  padding: 10px 40px;
+  border: 3px solid transparent;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+  outline: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  z-index: 5;
+  text-transform: uppercase;
+  &:hover {
+    @include colorChange(goldenrod, 1);
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    background-color: goldenrod;
+    z-index: -1;
+    transition: all .5s;
+  }
+  &:hover::before {
+    width: 100%;
+    transition: .5s;
+  }
+}
+
+.button:nth-child(1) {
+  color: #000;
+  border: 2px solid transparent;
+  &::before {
+    background-color: goldenrod;
+  }
+  &:hover {
+    @include colorChange(goldenrod, 2);
+  }
+}

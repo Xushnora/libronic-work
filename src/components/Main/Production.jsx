@@ -1,39 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BtnNavigation from "./BtnNavigation";
 import Mission from "./Mission";
 import Footer from '../Footer/Footer'
 import Category from "./Category";
 import CategoryBtn from "./CategoryBtn";
-import obj from '../../categoryDoorsObj'
+import { useLocation } from "react-router-dom";
 
-function Production(){
 
-    const [filteredArr, setFilteredArr] = useState([])
+function Production({ 
+    isPlaying, 
+    setIsPlaying, 
+    currentSong, 
+    categoriesArr,
+    productsArr
+}){
 
+    let location  = useLocation();
+
+    const audioRef = useRef(null)
+    
     useEffect(() => {
-        setFilteredArr(obj)
+        audioRef.current.play();
     }, [])
 
-    console.log(filteredArr);
+    const playSongHandler = () => {
+        if(isPlaying) {
+            audioRef.current.play();
+        } else {
+            audioRef.current.pause();
+        }
+        setIsPlaying(!isPlaying)
+    }
+
+    const [filteredArr, setFilteredArr] = useState([])
+    
+    useEffect(() => {
+        setFilteredArr( productsArr )
+    }, [])
 
     return(
-        <div className="production">
-            <div className="langpage__volume">
-                <i className='bx bx-volume-full'></i>
-            </div>
-            <div className="production__infos">
-                <h2 className="production__title">our production doors</h2>
-                <p className="production__text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum</p>
-            </div>
-            <CategoryBtn 
-                setFilteredArr = {setFilteredArr}
-                obj = {obj}
-            />
-            <Category filteredArr = {filteredArr}/>
-            <Mission />
-            <Footer />
-            <BtnNavigation />
+        <>
+        <div className="langpage__volume" onClick={playSongHandler}>
+            <i className={isPlaying ? 'bx bx-volume-mute' : 'bx bx-volume-full'}></i>
         </div>
+        {categoriesArr.map((item, i) => {
+            if(item.id === +location.pathname.split('/').at(-1)) {
+                return (
+                    <div key={i} className="production">
+                        <div className="production__infos">
+                            <h2 className="production__title">our production {item.name_en}</h2>
+                            <p className="production__text">{item.description_en}</p>
+                        </div>
+                        <div className="production__btnBox">
+                            <CategoryBtn 
+                                setFilteredArr = {setFilteredArr}
+                                productsArr = {productsArr}
+                            />
+                        </div>
+                        <Category filteredArr = {filteredArr}/>
+                        <Mission />
+                        <Footer />
+                        <BtnNavigation />
+                        <audio ref={audioRef} src={currentSong.audio}></audio>
+                    </div>
+                )
+            }
+        })}
+        </>
     )
 }
 
