@@ -14,10 +14,6 @@ function Mission(){
                     <Link to = '/about'>
                         <button className="mission__btn button animate__animated animate__tada animate__delay-2s">Explore more</button>
                     </Link>
-                    {/* <div>
-                        <span class="button">Contact</span>
-                        <span class="button">Explore more</span>
-                    </div> */}
                 </div>
             </div>
         </div>

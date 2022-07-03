@@ -7,6 +7,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100% !important;
         padding-bottom: 50px;
         border-bottom: 3px solid rgb(224, 224, 224);
     }
@@ -37,7 +38,11 @@
     &__mediaBtn {
         background: #000;
         border-radius: 50%;
-        padding: 17px 18px 15px 18px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: #fff;
         border: none;
         outline: none;
@@ -56,7 +61,6 @@
 
     &__info {
         padding-top: 48px;
-        
     }
 
     &__title {
@@ -136,5 +140,113 @@
         line-height: 20px;
         color: #000;
 
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .footer {
+        padding: 30px;
+
+        &__listBox {
+            margin-bottom: 30px;
+        }
+
+        &__list {
+            width: 70%;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        &__rowBox {
+            padding-bottom: 18px;
+        }
+
+        &__mediaBtn {
+            width: 29px;
+            height: 29px;
+    
+            .bx {
+                font-size: 11px;
+            }
+        }
+        
+        &__logo {
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 0.075px;
+        }
+
+        &__title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &__info {
+            padding-top: 35px;
+        }
+
+        &__listBox {
+            position: relative;
+        }
+
+        &__contact {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            position: absolute;
+            top: -43px;
+            right: 0;
+        }
+
+        &__list {
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 160px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        &__text {
+            font-size: 10px;
+            line-height: 20px;
+             margin-bottom: 0;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+    .footer {
+        padding: 15px;
+        &__item {
+            width: 130px;
+        }
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .footer {
+        &__item {
+            width: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .footer {
+        &__item {
+            width: 90px;
+        }
     }
 }

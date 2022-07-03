@@ -36,6 +36,9 @@ function Footer(){
                                 <li className="footer__item"> Products </li>
                             </Link>
                             <Link to = '/products'>
+                                <li className="footer__item"> Investors </li>
+                            </Link>
+                            <Link to = '/products'>
                                 <li className="footer__item"> Events </li>
                             </Link>
                             <Link to = '/products'>

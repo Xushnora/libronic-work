@@ -5,12 +5,6 @@ import { Link } from "react-router-dom"
 function MissonUs({ isPlaying, setIsPlaying, currentSong }){
 
     const audioRef = useRef(null)
-    
-    useEffect(() => {
-        audioRef.current.play();
-        setIsPlaying(false)
-    }, [])
-
 
     const playSongHandler = () => {
         if(isPlaying) {

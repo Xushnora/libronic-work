@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import {Routes, Route} from 'react-router-dom'
 import LangPage from './components/LangPage/LangPage';
 import Products from './components/Main/Products';
-import { useTranslation } from "react-i18next";
 import Production from './components/Main/Production';
 import AboutUs from './components/AboutUs/About';
 import Contact from './components/AboutUs/Contact';
@@ -11,6 +10,9 @@ import musicData from './musicObj';
 import Slide from './components/Buy/Slide';
 import i18n from 'i18next';
 
+// test uchun o'zimni obyectim
+import categorObj from './doorsObj'
+import productObj from './categoryDoorsObj'
 
 function App() {
 
@@ -20,6 +22,19 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [categoriesArr, setCategoriesArr] = useState([])
   const [productsArr, setProductArr] = useState([])
+
+  // O'zim uchun state
+  const [doorObj, setDoorObj] = useState(categorObj)
+  useEffect(() => {
+    setDoorObj(categorObj)
+  }, [])
+
+  const [products, setProducts] = useState(productObj)
+  useEffect(() => {
+    setProducts(productObj)
+  })
+
+  // !!!!!!!!!!!!!
 
   useEffect(() => {
     fetch('http://93.189.40.27:2900/categories/')
@@ -34,18 +49,10 @@ function App() {
         .then(data => setProductArr(data))
         .catch(err => console.error(err));
     }, [])
-  
-  // TRANSLATE
-  // const {t, i18n} = useTranslation();
-  
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng);
-  // }
 
-  const [english, setEnglish] = useState(true);
+  const [english, setEnglish] = useState(localStorage.getItem('i18nextLng') ? localStorage.getItem('i18nextLng') == "en" ? true : false : false);
   const [russian, setRussian] = useState(false);
   const [uzbek, setUzbek] = useState(false);
-  const [home, setHome] = useState(true);
   const [langTitle, setLangTitle] = useState(localStorage.getItem('i18nextLng') ? localStorage.getItem('i18nextLng').toUpperCase() : "")
 
   function changeRu(item) {
@@ -54,7 +61,7 @@ function App() {
     setRussian(item)
     setEnglish(!item)
     setUzbek(!item)
-    setHome(false)
+    
   }
 
   function changeEng(item) {
@@ -63,7 +70,7 @@ function App() {
     setEnglish(item)
     setRussian(!item)
     setUzbek(!item)
-    setHome(false)
+
   }
 
   function changeUz(item) {
@@ -72,7 +79,6 @@ function App() {
     setUzbek(item)
     setEnglish(!item)
     setRussian(!item)
-    setHome(false)
   }
 
   window.addEventListener("load", () => {
@@ -106,6 +112,11 @@ console.log(localStorage.getItem('i18nextLng'));
                 english = {english}
                 russian = {russian}
                 uzbek = {uzbek}
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                doorObj = {doorObj}
+
             />} 
             />
 
@@ -115,7 +126,14 @@ console.log(localStorage.getItem('i18nextLng'));
                 currentSong = { setCurrentSong }
                 categoriesArr = {categoriesArr}
                 productsArr = {productsArr}
-            />}/>
+                russian = {russian}
+                english = {english}
+                uzbek = {uzbek}
+
+                // !!!!!!!!!!!!!!!!!!!!!!!!!
+                products = {products}
+              />}
+            />
             <Route path = 'about' element = {<AboutUs 
               isPlaying = {isPlaying}
               setIsPlaying = {setIsPlaying}
@@ -127,6 +145,10 @@ console.log(localStorage.getItem('i18nextLng'));
               isPlaying = {isPlaying}
               setIsPlaying = {setIsPlaying}
               currentSong = {currentSong}
+
+              // !!!!!!!!!!!!!!!!!!!!1
+              products = {products}
+              
               />} 
             />
             <Route path='about' element = {<Contact />} />

@@ -1,14 +1,14 @@
 .production {
     width: 100%;
-    height: 100vh !important;
+    height: 800px;
     background-image: url("https://imgur.com/nP80jVU.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-color: #000;
+    background-color: #fff;
 
     &__infos {
-        padding-top: 250px;
+        padding-top: 230px;
         padding-left: 150px;
         color: #fff;
     }
@@ -16,11 +16,12 @@
     &__title {
         font-family: 'Anton', sans-serif;
         font-size: 70.3688px;
-        line-height: 80px;
+        line-height: 75px;
         color: #fff;
         width: 520px;
         height: 180px;
         text-transform: uppercase;
+        margin-bottom: 50px;
     }
 
     &__text {
@@ -37,14 +38,15 @@
     // category btns
 
     &__btnBox {
-        position: absolute;
-        bottom: 10%;
-        left: 30%;
+        position: relative;
+        bottom: 4%;
+        left: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 30px;
         gap: 1rem;
+        margin-bottom: 10px;
     }
 
     &__categoryBtn {
@@ -70,10 +72,6 @@
             opacity: 1;
         }
     }
-
-    &__btnBox {
-        margin-bottom: 10px;
-    }
 }
 
 .activeBtn {
@@ -82,4 +80,49 @@
 
 .category {
     width: 100%;
+}
+
+@media screen and (max-width: 768px) { 
+    .production {
+        width: auto;
+        height: 300px;
+
+        &__infos {
+            padding-top: 60px;
+            padding-left: 20px;
+
+        }
+
+        &__title {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 100%;
+            width: 224px;
+            height: 100%;
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            width: 80%;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 100%;
+            height: 100%;
+            margin-bottom: 53px;
+        }
+
+        &__btnBox {
+            bottom: 1%;
+            left: 0;
+            padding-top: 0;
+            gap: 0rem;
+            margin-bottom: 4px;
+        }
+
+        &__categoryBtn {
+            font-size: 10px;
+            line-height: 15px;
+            margin-right: 10px;
+        }
+    }
 }

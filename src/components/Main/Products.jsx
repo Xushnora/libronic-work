@@ -11,7 +11,11 @@ function Products({
     categoriesArr, 
     english,
     russian, 
-    uzbek
+    uzbek,
+
+    // !!!!!!!!!!!!!!!!!!!!!!
+
+    doorObj
 }){
 
     const audioRef = useRef(null)
@@ -50,10 +54,10 @@ function Products({
                         </>
                     }
                 </div>
-                <ul className="products__list">
-                    {categoriesArr.map((item, i) => {
+                <ul className="products__list row">
+                    {doorObj.map((item, i) => {
                         return (
-                            <li key={i} className="products__item">
+                            <li key={i} className="products__item col-6">
                                 <img className="products__imgBox" src={item.image} alt="door" />
                                 <div className="products__infoBox">
                                     <span className="products__span animate__animated animate__bounceInLeft animate__delay-2s">art</span>

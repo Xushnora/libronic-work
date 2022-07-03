@@ -45,3 +45,10 @@ body::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     border-radius: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 99% !important;
+    }
+}
+

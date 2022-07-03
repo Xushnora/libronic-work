@@ -84,3 +84,84 @@
         }
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .langpage {
+        width: auto;
+        height: 100vh !important;
+        border: 2px solid #fff;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-image: url('https://imgur.com/6sinyXD.jpg');
+
+
+        &__titleBox {
+            width: 50%;
+            margin: 0 auto; 
+            margin-bottom: 40px;
+        }
+
+        &__btnsBox {
+            width: 50%;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__title {
+            margin-top: 26%;
+            padding-left: 40px;
+            width: 172px;
+            font-size: 28px;
+            line-height: 100%;
+        }
+
+        
+        &__btnsBox {
+            width: 50%;
+        }
+
+        &__btn{
+            width: 134px;
+            height: 43px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 28px;
+            margin-bottom: 45px; 
+            border-radius: 8px;
+        }
+
+        &__volume{
+            right: 20px;
+            top: 20px;
+    
+            .bx {
+                font-size: 22px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 350px) { 
+    .langpage {
+        flex-direction: column;
+
+        &__title {
+            text-align: center;
+            width: 80%;
+            padding-left: 0px;
+        }
+
+        &__titleBox {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        &__btnsBox {
+            width: 100%;
+        }
+    }
+}
