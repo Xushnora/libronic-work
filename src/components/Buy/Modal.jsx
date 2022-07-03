@@ -41,7 +41,7 @@ function Modal(){
                     <div className="modal-body">
                         <div className="modalBox">
                             <form className="contact__form">
-                                <div className="contact__inputBox">
+                                <div className="contact__inputBox modal-input">
                                     <input onChange={
                                         (e) => setNameValue(e.target.value)} 
                                         type="text" 
@@ -51,7 +51,7 @@ function Modal(){
                                         value={nameValue}
                                     required/>
                                 </div>
-                                <div className="contact__inputBox">
+                                <div className="contact__inputBox modal-input">
                                     <input 
                                         onChange={(e) => setNumValue(e.target.value)} 
                                         type="number" 

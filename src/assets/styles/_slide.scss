@@ -53,19 +53,15 @@
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        background-color: #fff;
-    }
-
     .slide {
         width: 100%;
-        height: 100%;
+        height: 330px;
         position: relative;
         background-color: #fff;
     
         &__img {
             object-fit: cover;
-            height: 350px;
+            height: 330px;
         }
     
         &__acsess {
@@ -77,15 +73,17 @@
             background-color: rgba(0, 0, 0, 0.356);
         }
     
-        &__acsessBox {
-            overflow: hidden;
-        }
-    
         &__btnBox {
             position: relative;
-            left: 10%;
+            left: 5%;
             bottom: 0px;
             // border: 1px solid #ccc;
+        }
+
+        &__textBox {
+            position: absolute;
+            bottom: 0;
+            // border: 1px solid #fff;
         }
     
         &__container {
@@ -101,7 +99,12 @@
         }
     
         &__btnCont {
-            margin-right: 10%;
+            margin-right: 5%;
         }
+    }
+
+    .buy-btn {
+        width: 80px;
+        height: 25px;
     }
 }

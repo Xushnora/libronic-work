@@ -36,19 +36,19 @@ function App() {
 
   // !!!!!!!!!!!!!
 
-  useEffect(() => {
-    fetch('http://93.189.40.27:2900/categories/')
-      .then(response => response.json())
-      .then(data => setCategoriesArr(data))
-      .catch(err => console.error(err));
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://93.189.40.27:2900/categories/')
+  //     .then(response => response.json())
+  //     .then(data => setCategoriesArr(data))
+  //     .catch(err => console.error(err));
+  // }, [])
 
-  useEffect(() => {
-      fetch('http://93.189.40.27:2900/products/')
-        .then(response => response.json())
-        .then(data => setProductArr(data))
-        .catch(err => console.error(err));
-    }, [])
+  // useEffect(() => {
+  //     fetch('http://93.189.40.27:2900/products/')
+  //       .then(response => response.json())
+  //       .then(data => setProductArr(data))
+  //       .catch(err => console.error(err));
+  //   }, [])
 
   const [english, setEnglish] = useState(localStorage.getItem('i18nextLng') ? localStorage.getItem('i18nextLng') == "en" ? true : false : false);
   const [russian, setRussian] = useState(false);
@@ -88,6 +88,7 @@ function App() {
     setLangTitle(localStorage.getItem('i18nextLng').toUpperCase())
     console.log('HELLO');
   })
+
 console.log(localStorage.getItem('i18nextLng'));
 
 
@@ -121,17 +122,12 @@ console.log(localStorage.getItem('i18nextLng'));
             />
 
             <Route path='production/:id' element = {<Production
-                isPlaying={ isPlaying }
-                setIsPlaying = { setIsPlaying }
-                currentSong = { setCurrentSong }
                 categoriesArr = {categoriesArr}
                 productsArr = {productsArr}
-                russian = {russian}
-                english = {english}
-                uzbek = {uzbek}
 
                 // !!!!!!!!!!!!!!!!!!!!!!!!!
-                products = {products}
+                products = { products }
+                doorObj = { doorObj }
               />}
             />
             <Route path = 'about' element = {<AboutUs 
@@ -148,7 +144,7 @@ console.log(localStorage.getItem('i18nextLng'));
 
               // !!!!!!!!!!!!!!!!!!!!1
               products = {products}
-              
+
               />} 
             />
             <Route path='about' element = {<Contact />} />

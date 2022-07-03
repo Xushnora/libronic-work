@@ -1,19 +1,24 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
-
-import en from './locale/en.json';
-import uz from './locale/uz.json';
-import ru from './locale/ru.json';
-
-i18n.use(LanguageDetector).use(initReactI18next).init({
+i18next.init({
+  lng: 'en',
+  debug: true,
   resources: {
-    en,
-    ru,
-    uz,
-  },
-  
-  fallbackLng: 'en',
+    en: {
+      translation: {
+        "key": "hello world"
+      }
+    }
+  }
+}, function(err, t) {
+  // initialized and ready to go!
+  console.log("Ready to go!");
 });
 
-export default i18n;
+var changeLng = function(varLng) {
+  i18next.changeLanguage('en', (err, t) => {
+    if (err) return console.log('something went wrong loading', err);
+    t('applog'); // -> same as i18next.t
+  });
+};
+
+changeLng()
+

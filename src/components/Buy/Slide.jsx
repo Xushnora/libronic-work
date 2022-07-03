@@ -79,17 +79,19 @@ function Slide({
                                                 </div>
                                             </div>
                                         </div>
-                                        <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">our production {item.name_en}</h2>
-                                        <div className="slide__textRow">
-                                            <p className="mission__text  animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
-                                            <div className="slide__btnCont">
-                                                <button 
-                                                    type="button" 
-                                                    className="mission__btn button animate__animated animate__tada animate__delay-2s animate__repeat-2"  
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#exampleModal">
-                                                        buy
-                                                </button>
+                                        <div className="slide__textBox">
+                                            <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">our production {item.name_en}</h2>
+                                            <div className="slide__textRow">
+                                                <p className="mission__text  animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
+                                                <div className="slide__btnCont">
+                                                    <button 
+                                                        type="button" 
+                                                        className="mission__btn buy-btn button animate__animated animate__tada animate__delay-2s animate__repeat-2"  
+                                                        data-bs-toggle="modal" 
+                                                        data-bs-target="#exampleModal">
+                                                            buy
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                         <audio ref={audioRef} src={currentSong.audio}></audio>

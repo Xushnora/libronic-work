@@ -10,3 +10,24 @@
     height: 300px;
     background-color: #000;
 }
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        margin-left: 5%;
+        background-color: #000;
+        width: 90% !important;
+    }
+
+    .modal-body {
+        padding-bottom: 20px;
+        padding-top: 20px;
+        width: 90% !important;
+        height: 190px;
+    }
+
+    .modal-input {
+        border-right: 2px solid rgba(168, 136, 29, 0.596);
+        background-size: cover;
+    }
+    
+}

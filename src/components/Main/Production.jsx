@@ -8,35 +8,15 @@ import { useLocation } from "react-router-dom";
 
 
 function Production({ 
-    isPlaying, 
-    setIsPlaying, 
-    currentSong, 
     categoriesArr,
     productsArr,
-    english,
-    russian,
-    uzbek,
 
     // **********
-    products
+    products,
+    doorObj
 }){
 
     let location  = useLocation();
-
-    const audioRef = useRef(null)
-    
-    // useEffect(() => {
-    //     audioRef.current.play();
-    // }, [])
-
-    const playSongHandler = () => {
-        if(isPlaying) {
-            audioRef.current.play();
-        } else {
-            audioRef.current.pause();
-        }
-        setIsPlaying(!isPlaying)
-    }
 
     const [filteredArr, setFilteredArr] = useState(products)
 
@@ -61,32 +41,16 @@ function Production({
 
     return(
         <>
-        <div className="langpage__volume" onClick={playSongHandler}>
-            <i className={isPlaying ? 'bx bx-volume-mute' : 'bx bx-volume-full'}></i>
-        </div>
-        {categoriesArr.map((item, i) => {
+        {/* <div className="langpage__volume">
+            <i className='bx bx-volume-full'></i>
+        </div> */}
+        {doorObj.map((item, i) => {
             if(item.id === +location.pathname.split('/').at(-1)) {
                 return (
                     <div key={i} className="production col-1">
                         <div className="production__infos">
-                            {english && 
                                 <h2 className="production__title">our production {item.name_en}</h2>
-                            }
-                            {russian &&                      /* наше производство */
-                                <h2 className="production__title">our production {item.name_en}</h2>
-                            }
-                            {uzbek && 
-                                <h2 className="production__title">Biz ishlab chiqargan {item.name_uz}</h2>
-                            }
-                            {english &&
                                 <p className="production__text">{item.description_en}</p>
-                            }
-                            {russian &&
-                                <p className="production__text">{item.description_en}</p>
-                            }
-                            {uzbek &&
-                                <p className="production__text">{item.description_uz}</p>
-                            }
                         </div>
                         <div className="production__btnBox">
                             <CategoryBtn 
@@ -105,7 +69,6 @@ function Production({
                         <Mission />
                         <Footer />
                         <BtnNavigation />
-                        <audio ref={audioRef} src={currentSong.audio}></audio>
                     </div>
                 )
             }

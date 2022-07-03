@@ -2,19 +2,24 @@ import React, { useEffect, useState } from "react";
 import ReactOwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import videoArr from '../../VideoObj'
 
 
 function Vedios(){
 
     const [count, setCount] = useState(0)
-    const [videos, setVideos] = useState([])
+    const [videos, setVideos] = useState([videoArr])
 
     useEffect(() => {
-        fetch('http://93.189.40.27:2900/videos/')
-          .then(response => response.json())
-          .then(data => setVideos(data))
-          .catch(err => console.error(err));
-      }, [])
+        setVideos(videoArr)
+    })
+
+    // useEffect(() => {
+    //     fetch('http://93.189.40.27:2900/videos/')
+    //       .then(response => response.json())
+    //       .then(data => setVideos(data))
+    //       .catch(err => console.error(err));
+    //   }, [])
 
     const handlerRightBtn = () => {
         setCount(count + 1)
@@ -22,7 +27,6 @@ function Vedios(){
 
     const handlerLeftBtn = () => {
         setCount(count - 1);
-
     }
 
     return(
@@ -38,7 +42,11 @@ function Vedios(){
                     {videos.map((item, i) => {
                         return (
                             <div key={i} className="vedios__item" >
-                                <video controls className="vedios__video" src={item.link}></video>
+                                <video 
+                                    controls
+                                    className="vedios__video" 
+                                    src={item.media}>
+                                </video>
                                 <div className="vedios__icons">
                                     <div className="vedios__animat"></div>
                                     <i className='bx bx-play-circle'></i>
