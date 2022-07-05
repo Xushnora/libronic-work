@@ -110,7 +110,7 @@
 }
 
 .settingImg {
-    animation: settings 8s linear infinite;
+    animation: settings 15s linear infinite;
 }
 
 @keyframes settings {
@@ -121,6 +121,23 @@
         transform: rotate(360deg);
     }
 }
+
+.trueImg {
+    animation: trueAnim 3s linear infinite;
+}
+
+@keyframes trueAnim {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-17px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 
 .locationImg {
     animation: location 1.2s ease-in infinite;
@@ -151,6 +168,22 @@
     }
     100% {
         transform: translateX(0%);
+    }
+}
+
+.listImg {
+    animation: listAnim 2s ease infinite;
+}
+
+@keyframes listAnim {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -239,5 +272,7 @@
     }
 
 }
+
+
 
 

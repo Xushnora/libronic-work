@@ -1,15 +1,15 @@
 const videoObj = [
     {
         id: 1,
-        media: "./assets/videos/vedio1.mp4"
+        media: "https://imgur.com/wXskiGA.jpg"
     },
     {
         id: 2,
-        media: "./assets/videos/video2.mp4"
+        media: "https://imgur.com/wXskiGA.jpg"
     },
     {
         id: 3,
-        media: "./assets/videos/video3.mp4"
+        media: "https://imgur.com/wXskiGA.jpg"
     },
 ]
 

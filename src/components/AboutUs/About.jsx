@@ -13,7 +13,7 @@ function AboutUs({isPlaying, setIsPlaying, currentSong}){
                 <div className="about__infoBox">
                     <ul className="about__list">
                         <li className="about__item">
-                            <img className="about__itemImg" src="https://imgur.com/bNYpOv3.png" alt="setting" />
+                            <img className="about__itemImg trueImg" src="https://imgur.com/bNYpOv3.png" alt="setting" />
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                         <li className="about__item">
@@ -21,7 +21,7 @@ function AboutUs({isPlaying, setIsPlaying, currentSong}){
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                         <li className="about__item">
-                            <img className="about__itemImg" src="https://imgur.com/NcZFI6a.png" alt="list" />
+                            <img className="about__itemImg listImg" src="https://imgur.com/NcZFI6a.png" alt="list" />
                             <p className="about__itemText">Many desktop publishing packages and web page editors now use</p>
                         </li>
                         <li className="about__item">

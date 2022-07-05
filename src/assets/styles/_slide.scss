@@ -45,7 +45,7 @@
 }
 
 .slide-left {
-    margin-left: 50px;
+    margin-left: 60px;
 }
 
 .slide-volume {
@@ -83,6 +83,7 @@
         &__textBox {
             position: absolute;
             bottom: 0;
+            left: 10%;
             // border: 1px solid #fff;
         }
     
@@ -101,10 +102,24 @@
         &__btnCont {
             margin-right: 5%;
         }
+
     }
 
     .buy-btn {
         width: 80px;
         height: 25px;
+    }
+
+    .slide-volume {
+        padding-left: 150px;
+        margin-left: 11%;
+    }
+
+    .slideMatn {
+        width: 80% !important;
+    }
+
+    .slide-left {
+        margin-left: 40px;
     }
 }

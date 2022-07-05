@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer'
 import Category from "./Category";
 import CategoryBtn from "./CategoryBtn";
 import { useLocation } from "react-router-dom";
+import musicData from '../../musicObj';
 
 
 function Production({ 
@@ -17,6 +18,10 @@ function Production({
 }){
 
     let location  = useLocation();
+    // music 
+    const [songs, setSongs] = useState(musicData());
+    const [currentSong, setCurrentSong] = useState(songs[0]);
+    const [isPlaying, setIsPlaying] = useState(true);
 
     const [filteredArr, setFilteredArr] = useState(products)
 
@@ -37,6 +42,19 @@ function Production({
             setFilteredArr(newfilteredArr);
         }
         else{setFilteredArr(products)}
+    }
+
+    // music
+
+    const audioRef = useRef(null)
+
+    const playSongHandler = () => {
+        if(isPlaying) {
+            audioRef.current.play();
+        } else {
+            audioRef.current.pause();
+        }
+        setIsPlaying(!isPlaying)
     }
 
     return(
@@ -69,6 +87,10 @@ function Production({
                         <Mission />
                         <Footer />
                         <BtnNavigation />
+                        <div className="langpage__volume" onClick={playSongHandler}>
+                            <i className={isPlaying ? 'bx bx-volume-mute' : 'bx bx-volume-full'}></i>
+                        </div>
+                        <audio ref={audioRef} src={currentSong.audio}></audio>
                     </div>
                 )
             }

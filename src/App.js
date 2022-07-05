@@ -20,6 +20,7 @@ function App() {
   const [songs, setSongs] = useState(musicData());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(true);
+
   const [categoriesArr, setCategoriesArr] = useState([])
   const [productsArr, setProductArr] = useState([])
 

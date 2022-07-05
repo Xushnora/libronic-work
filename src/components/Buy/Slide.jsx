@@ -63,7 +63,7 @@ function Slide({
                                 <div className="slide__acsessBox">
                                     <div className="container">
                                         <div className="slide__btnBox">
-                                            <div className="missionUs__btns">
+                                            <div className="missionUs__btns slideBtnBox">
                                                 <div className="missionUs__left slide-left leftBtn">
                                                     <Link to = "/products">
                                                         <i className='bx bxs-left-arrow-alt'></i>
@@ -82,7 +82,7 @@ function Slide({
                                         <div className="slide__textBox">
                                             <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">our production {item.name_en}</h2>
                                             <div className="slide__textRow">
-                                                <p className="mission__text  animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
+                                                <p className="mission__text slideMatn animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
                                                 <div className="slide__btnCont">
                                                     <button 
                                                         type="button" 

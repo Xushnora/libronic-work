@@ -6,7 +6,7 @@ function chillHop() {
       cover:
         "https://static9.tgstat.ru/channels/_0/ee/eeea68e6dcf9523aaceed7cb773fad0f.jpg",
       artist: "Nilufar bintu Ulug'bek",
-      audio: "https://muzfm.belver.cloud/uploads/dl06/nilufar-bintu-ulug-bek-hamdlar-aytsam.mp3",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
       color: ["#EF8EA9", "#ab417f"],
       id: uuidv4(),
       active: true,

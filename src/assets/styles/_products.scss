@@ -184,7 +184,6 @@
 
 @media screen and (max-width: 768px) {
     .products {
-
         &__nameBox {
             top: 2%;
         }
@@ -210,18 +209,19 @@
         }
 
         &__btnGroup {
-            top: 10%;
+            top: 5%;
             gap: 8px;
         }
     
         &__btns {
-            border-width: 5.42484px 0px 5.42484px 5.42484px;
+            border-width: 2.42484px 0px 2.42484px 2.42484px;
             border-style: solid;
             border-color: #FFFFFF;
-            font-size: 12px;
+            font-size: 9px;
+            padding: 5px 10px;
     
             .bx {
-                font-size: 17px;
+                font-size: 12px;
             }
 
         }
@@ -230,7 +230,6 @@
 
 @media screen and (max-width: 558px) {
     .products {
-
         &__nameBox {
             top: 1.5%;
         }

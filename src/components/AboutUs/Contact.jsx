@@ -17,14 +17,14 @@ function Contact(){
         console.log(nameValue, number, text);
 
         if(nameValue === "") {
-            // alert("Iltimos, ismingizni kiriting!")
-            setColor(true)
+            alert("Iltimos, ismingizni kiriting!")
+            // setColor(true)
         } else if(number === "") {
-            // alert("Iltimos, nomeringizni kiriting!")
-            setColor(true)
+            alert("Iltimos, nomeringizni kiriting!")
+            // setColor(true)
         } else if(text === "") {
-            // alert("Iltimos, xabaringizni kiriting!")
-            setColor(true)
+            alert("Iltimos, xabaringizni kiriting!")
+            // setColor(true)
         } else {
             fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=${bot.message}`, {
                 method : "GET"
@@ -55,7 +55,6 @@ function Contact(){
                             onChange={(e) => setNameValue(e.target.value)}
                             value = {nameValue}
                             required
-                            style={{color: color ? "red" : "#999"}}
                         />
                     </div>
                     <div className="contact__inputBox">
