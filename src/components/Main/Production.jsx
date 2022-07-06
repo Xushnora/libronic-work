@@ -11,6 +11,9 @@ import musicData from '../../musicObj';
 function Production({ 
     categoriesArr,
     productsArr,
+    english,
+    russian,
+    uzbek,
 
     // **********
     products,
@@ -32,16 +35,10 @@ function Production({
 
     const handlerClick = (e) => {
         let btnValue = e.target.textContent;
-
-        if(btnValue === "Barchasi") {
-            setFilteredArr(products);
-        } else if(btnValue != "Barchasi") {
             const newfilteredArr = products.filter((item) => {
                 return item.category === +e.target.id
             })
             setFilteredArr(newfilteredArr);
-        }
-        else{setFilteredArr(products)}
     }
 
     // music
@@ -59,27 +56,49 @@ function Production({
 
     return(
         <>
-        {/* <div className="langpage__volume">
-            <i className='bx bx-volume-full'></i>
-        </div> */}
         {doorObj.map((item, i) => {
             if(item.id === +location.pathname.split('/').at(-1)) {
                 return (
                     <div key={i} className="production col-1">
                         <div className="production__infos">
-                                <h2 className="production__title">our production {item.name_en}</h2>
-                                <p className="production__text">{item.description_en}</p>
+                            {uzbek &&
+                                <>
+                                    <h2 className="production__title">Biz ishlab chiqargan {item.name_uz}</h2>
+                                    <p className="production__text">{item.description_uz}</p>
+                                </>
+                            }
+                            {russian &&
+                                <>
+                                    <h2 className="production__title">НАША ПРОДУКЦИЯ {item.name_ru}</h2>
+                                    <p className="production__text">{item.description_ru}</p>
+                                </>
+                            }
+                            {english &&
+                                <>
+                                    <h2 className="production__title">our production {item.name_en}</h2>
+                                    <p className="production__text">{item.description_en}</p>
+                                </>
+                            }
                         </div>
                         <div className="production__btnBox">
                             <CategoryBtn 
                                 handlerClick = {handlerClick}
+                                uzbek = {uzbek}
+                                english = {english}
+                                russian = {russian}
                             />
                         </div>
                         <div className="category">
                             <ul className="products__list row">
                                 {filteredArr.map((item, i) => {
                                     return (
-                                        <Category key={i} item = {item}/>
+                                        <Category 
+                                        key={i} 
+                                        item = {item}
+                                        english = {english}
+                                        russian = {russian}
+                                        uzbek = {uzbek}
+                                    />
                                     )
                                 })}
                             </ul>

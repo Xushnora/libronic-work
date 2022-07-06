@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Modal from "./Modal";
@@ -8,6 +9,9 @@ function Slide({
     isPlaying,
     setIsPlaying,
     currentSong,
+    english,
+    uzbek,
+    russian,
 
     // !!!!!!!!!
     products
@@ -30,6 +34,8 @@ function Slide({
         }
         setIsPlaying(!isPlaying)
     }
+
+    const {t} = useTranslation();
 
     return(
         <>
@@ -80,16 +86,32 @@ function Slide({
                                             </div>
                                         </div>
                                         <div className="slide__textBox">
-                                            <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">our production {item.name_en}</h2>
+                                            {english && 
+                                                <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">our production {item.name_en}</h2>
+                                            }
+                                            {russian && 
+                                                <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">НАША ПРОДУКЦИЯ {item.name_ru}</h2>
+                                            }
+                                            {uzbek && 
+                                                <h2 className="mission__title  animate__animated animate__bounceInRight animate__delay-2s">Biz ishlab chiqargan {item.name_uz}</h2>
+                                            }
                                             <div className="slide__textRow">
-                                                <p className="mission__text slideMatn animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
+                                                {english &&
+                                                    <p className="mission__text slideMatn animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
+                                                }
+                                                {russian &&
+                                                    <p className="mission__text slideMatn animate__animated animate__bounceInLeft animate__delay-2s">{item.description_ru}</p>
+                                                }
+                                                {uzbek &&
+                                                    <p className="mission__text slideMatn animate__animated animate__bounceInLeft animate__delay-2s">{item.description_uz}</p>
+                                                }
                                                 <div className="slide__btnCont">
                                                     <button 
                                                         type="button" 
                                                         className="mission__btn buy-btn button animate__animated animate__tada animate__delay-2s animate__repeat-2"  
                                                         data-bs-toggle="modal" 
                                                         data-bs-target="#exampleModal">
-                                                            buy
+                                                            {t(21)}
                                                     </button>
                                                 </div>
                                             </div>

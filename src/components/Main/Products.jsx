@@ -38,21 +38,7 @@ function Products({
                     <i className={isPlaying ? 'bx bx-volume-mute' : 'bx bx-volume-full'}></i>
                 </div>
                 <div className="products__nameBox">
-                    {english &&
-                        <>
-                            <h2 className="products__name animate__animated animate__bounceInDown animate__delay-2s">product</h2>
-                        </>
-                    }
-                    {russian &&
-                        <>
-                            <h2 className="products__name animate__animated animate__bounceInDown animate__delay-2s">product</h2>
-                        </>
-                    }
-                    {uzbek &&
-                        <>
-                            <h2 className="products__name animate__animated animate__bounceInDown animate__delay-2s">product</h2>
-                        </>
-                    }
+                    <h2 className="products__name animate__animated animate__bounceInDown animate__delay-2s">{t(3)}</h2>
                 </div>
                 <ul className="products__list row">
                     {doorObj.map((item, i) => {
@@ -60,12 +46,20 @@ function Products({
                             <li key={i} className="products__item col-6">
                                 <img className="products__imgBox" src={item.image} alt="door" />
                                 <div className="products__infoBox">
-                                    <span className="products__span animate__animated animate__bounceInLeft animate__delay-2s">art</span>
-                                    <h3 className="products__title animate__animated animate__bounceInRight animate__delay-2s">{item.name_en}</h3>
+                                    <span className="products__span animate__animated animate__bounceInLeft animate__delay-2s">{t(19)}</span>
+                                    {english &&
+                                        <h3 className="products__title animate__animated animate__bounceInRight animate__delay-2s">{item.name_en}</h3>
+                                    }
+                                    {russian &&
+                                        <h3 className="products__title animate__animated animate__bounceInRight animate__delay-2s">{item.name_ru}</h3>
+                                    }
+                                    {uzbek &&
+                                        <h3 className="products__title animate__animated animate__bounceInRight animate__delay-2s">{item.name_uz}</h3>
+                                    }
                                     <p className="products__text animate__animated animate__bounceInLeft animate__delay-2s">{item.description_en}</p>
                                     <Link to= {`/production/${item.id}`}>
                                         <button className="products__button anim-btn">
-                                            <p>Explore more</p>
+                                            <p>{t(1)}</p>
                                             <i className='bx bx-chevrons-right'></i>
                                         </button>
                                     </Link>
@@ -76,7 +70,11 @@ function Products({
                 </ul>
                 <BtnNavigation />
             </div>
-            <Footer />
+            <Footer 
+                english={english}  
+                uzbek = {uzbek} 
+                russian = {russian} 
+            />
             <audio ref={audioRef} src={currentSong.audio}></audio>
         </>
     )

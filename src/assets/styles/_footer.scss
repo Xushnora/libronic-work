@@ -105,6 +105,7 @@
         opacity: 0.75;
         cursor: pointer;
         transition: all 0.3s ease;
+        text-transform: capitalize;
 
         &:hover {
             opacity: 1;

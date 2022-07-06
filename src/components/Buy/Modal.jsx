@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Modal(){
 
@@ -33,6 +34,8 @@ function Modal(){
         }
     }
 
+    const {t} = useTranslation();
+
     return(
         <>
             <div className="modal fade" id="exampleModal" tabIndex = "-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -47,7 +50,7 @@ function Modal(){
                                         type="text" 
                                         name="name" 
                                         id="name" 
-                                        placeholder="Ismingiz" 
+                                        placeholder={t(9)} 
                                         value={nameValue}
                                     required/>
                                 </div>
@@ -57,7 +60,7 @@ function Modal(){
                                         type="number" 
                                         name="number" 
                                         id="number" 
-                                        placeholder="Telefon raqamingiz" 
+                                        placeholder={t(10)}
                                         required
                                         value={numValue}
                                     />
@@ -68,7 +71,7 @@ function Modal(){
                                     onClick={handlerSubmit}
                                     data-bs-dismiss="modal" 
                                     aria-label="Close"
-                                > Submit </button>
+                                > {t(12)} </button>
                             </form>
                         </div>
                     </div>

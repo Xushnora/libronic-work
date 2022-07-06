@@ -1,6 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-function Footer(){
+function Footer({ english, russian, uzbek }){
+
+    const {t} = useTranslation();
+
     return(
         <div className="footer">
             <div className="container">
@@ -23,33 +27,33 @@ function Footer(){
                     </div>
                 </div>
                 <div className="footer__info">
-                    <h2 className="footer__title">Company</h2>
+                    <h2 className="footer__title">{t(18)}</h2>
                     <div className="footer__listBox">
-                        <ul className="footer__list">
+                            <ul className="footer__list">
+                                <Link to = '/about'>
+                                    <li className="footer__item">{t(2)}</li>
+                                </Link>
+                                <Link to = '/about'>
+                                    <li className="footer__item">{t(4)}</li>
+                                </Link>
+                                <Link to = '/products'>
+                                    <li className="footer__item">{t(3)}</li>
+                                </Link>
+                                <Link to = '/products'>
+                                    <li className="footer__item">{t(23)}</li>
+                                </Link>
+                                <Link to = '/products'>
+                                    <li className="footer__item">{t(22)}</li>
+                                </Link>
+                                <Link to = '/products'>
+                                    <li className="footer__item">{t(24)}</li>
+                                </Link>
+                            </ul>
                             <Link to = '/about'>
-                                <li className="footer__item">About Us </li>
+                                <p className="footer__contact">{t(6)}</p>
                             </Link>
-                            <Link to = '/about'>
-                                <li className="footer__item"> Press </li>
-                            </Link>
-                            <Link to = '/products'>
-                                <li className="footer__item"> Products </li>
-                            </Link>
-                            <Link to = '/products'>
-                                <li className="footer__item"> Investors </li>
-                            </Link>
-                            <Link to = '/products'>
-                                <li className="footer__item"> Events </li>
-                            </Link>
-                            <Link to = '/products'>
-                                <li className="footer__item"> Privacy policy </li>
-                            </Link>
-                        </ul>
-                        <Link to = '/about'>
-                            <p className="footer__contact">Contact Us</p>
-                        </Link>
                     </div>
-                    <p className="footer__text">© power 2021 - All Rights Reserved</p>
+                    <p className="footer__text">© power 2021 - {t(7)}</p>
                 </div>
             </div>
         </div>

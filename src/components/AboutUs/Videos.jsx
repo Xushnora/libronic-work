@@ -3,9 +3,12 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import videoArr from '../../VideoObj'
 import SwipVideo from './SwipVideo'
+import { useTranslation } from "react-i18next";
 
 
 function Vedios (){
+
+    const {t} = useTranslation();
 
     const [videos, setVideos] = useState([videoArr])
 
@@ -28,7 +31,7 @@ function Vedios (){
                 <SwipVideo videos = {videos}/>
             </div>
             <div className="vedios__titleBox"> 
-                <h2 className="vedios__title">testimonials about us</h2>
+                <h2 className="vedios__title">{t(8)}</h2>
             </div>
         </div>
     )

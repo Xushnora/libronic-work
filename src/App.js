@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import {Routes, Route} from 'react-router-dom'
 import LangPage from './components/LangPage/LangPage';
 import Products from './components/Main/Products';
@@ -8,11 +8,12 @@ import AboutUs from './components/AboutUs/About';
 import Contact from './components/AboutUs/Contact';
 import musicData from './musicObj';
 import Slide from './components/Buy/Slide';
-import i18n from 'i18next';
+// import i18n from 'i18next';
 
 // test uchun o'zimni obyectim
 import categorObj from './doorsObj'
 import productObj from './categoryDoorsObj'
+import { useTranslation } from 'react-i18next';
 
 function App() {
 
@@ -50,6 +51,8 @@ function App() {
   //       .then(data => setProductArr(data))
   //       .catch(err => console.error(err));
   //   }, [])
+
+  const {i18n} = useTranslation()
 
   const [english, setEnglish] = useState(localStorage.getItem('i18nextLng') ? localStorage.getItem('i18nextLng') == "en" ? true : false : false);
   const [russian, setRussian] = useState(false);
@@ -125,6 +128,9 @@ console.log(localStorage.getItem('i18nextLng'));
             <Route path='production/:id' element = {<Production
                 categoriesArr = {categoriesArr}
                 productsArr = {productsArr}
+                english = { english }
+                russian = { russian }
+                uzbek = { uzbek }
 
                 // !!!!!!!!!!!!!!!!!!!!!!!!!
                 products = { products }
@@ -135,13 +141,19 @@ console.log(localStorage.getItem('i18nextLng'));
               isPlaying = {isPlaying}
               setIsPlaying = {setIsPlaying}
               currentSong = {currentSong}
-              />} 
+              uzbek = {uzbek}
+              english = {english}
+              russian = {russian}
+            />} 
             />
             <Route path='description/:id' element = {<Slide 
               productsArr = {productsArr}
               isPlaying = {isPlaying}
               setIsPlaying = {setIsPlaying}
               currentSong = {currentSong}
+              uzbek = {uzbek}
+              english = {english}
+              russian = {russian}
 
               // !!!!!!!!!!!!!!!!!!!!1
               products = {products}

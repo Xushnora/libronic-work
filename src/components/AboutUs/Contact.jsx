@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Contact(){
+
+    const {t} = useTranslation();
 
     let [nameValue, setNameValue] = useState('')
     let [number, setNumber] = useState('')
@@ -51,7 +54,7 @@ function Contact(){
                             type="text" 
                             name="name" 
                             id="name" 
-                            placeholder="Ismingiz" 
+                            placeholder={t(9)} 
                             onChange={(e) => setNameValue(e.target.value)}
                             value = {nameValue}
                             required
@@ -62,7 +65,7 @@ function Contact(){
                             type="number" 
                             name="number" 
                             id="number" 
-                            placeholder="Telefon raqamingiz" 
+                            placeholder={t(10)} 
                             required
                             onChange={(e) => setNumber(e.target.value)}
                             value = {number}
@@ -71,12 +74,12 @@ function Contact(){
                     <div className="contact__areaBox">
                         <input 
                             type="text" 
-                            placeholder="Xabar..."
+                            placeholder={t(11)}
                             onChange={(e) => setText(e.target.value)}
                             value = {text}
                         />
                     </div>
-                    <button className="contact__btn" type="button" onClick={handlerSubmit}>Submit</button>
+                    <button className="contact__btn" type="button" onClick={handlerSubmit}>{t(12)}</button>
                 </form>
             </div>
         </>

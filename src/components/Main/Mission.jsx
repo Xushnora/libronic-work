@@ -1,18 +1,20 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom'
 
 function Mission(){
+    const {t} = useTranslation();
     return(
         <div className="mission">
             <div className="container">
-                <h2 className="mission__title animate__animated animate__bounceInRight animate__delay-2s">our company mission</h2>
-                <p className="mission__text animate__animated animate__bounceInLeft animate__delay-2s">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum!</p>
+                <h2 className="mission__title animate__animated animate__bounceInRight animate__delay-2s">{t(20)}</h2>
+                <p className="mission__text animate__animated animate__bounceInLeft animate__delay-2s">{t(14)}</p>
                 <div className="mission__btnGroup">
                     <Link to = '/about'>
-                        <button className="mission__btn button animate__animated animate__tada animate__delay-2s">Contact</button>
+                        <button className="mission__btn button animate__animated animate__tada animate__delay-2s">{t(5)}</button>
                     </Link>
-                    <Link to = '/about'>
-                        <button className="mission__btn button animate__animated animate__tada animate__delay-2s">Explore more</button>
+                    <Link to = '/products'>
+                        <button className="mission__btn button animate__animated animate__tada animate__delay-2s">{t(1)}</button>
                     </Link>
                 </div>
             </div>
